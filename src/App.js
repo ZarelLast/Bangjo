@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router , Route, Link } from 'react-router-dom' 
 import logo from './logo.svg';
 import './App.css';
+import 'typeface-roboto'
+import Home from './scenes/Home/Home'
+import Login from './scenes/Login/Login'
+import Camera from './scenes/Cctvs/CCTV'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className='App bg-dark'>
       </div>
     );
   }
 }
 
-export default App;
+class Routing extends Component {
+  render(){
+    return(
+      <Router className='bg-dark'>
+        <Route path='/' component={Login} />
+        {/* <Route path='/Login' exact component={Login} /> */}
+        <Route path='/Dashboard' component={Home} />
+        <Route path='/camera/:id' component={Camera} />
+      </Router>
+    )
+  }
+}
+
+export default Routing;
