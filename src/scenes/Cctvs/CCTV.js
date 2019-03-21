@@ -48,214 +48,75 @@ export default class Camera extends Component {
         hijau: 20,
       }
     ],
-    merah: 2,
+    merah: 20,
     kuning: 0,
     hijau: 0,
+    number:2,
     vid: null
   }
 
-  // componentDidMount () {
-  //   const id = this.props.match.params.id - 1
-  //   const vid = this.state.data[id].link
-  //   this.setState({ vid })
-  //   console.log(vid)
-    
-  //   setTimeout(() => {
-  //     console.log('kuning')
-  //   },2000)
-
-  //   this.interval = setInterval(() => {
-  //     // console.log(this.state.hijau)
-      
-  //     if(this.state.kuning===0 && this.state.hijau===0){
-  //       this.setState({ merah: this.state.merah -1 })
-  
-  //       if(this.state.kuning===0 && this.state.hijau===0){
-  //         clearInterval(this.interval)
-  //         setTimeout(()=>{
-  //           this.setState({kuning:2})
-  //         })
-  //       }
-  //     }
-
-  //     if(this.state.merah===0 && this.state.hijau===0){
-  //       this.setState({ kuning: this.state.kuning -1 })
-
-  //       if(this.state.kuning===0 && this.state.merah===0){
-  //         clearInterval(this.interval)
-  //         setTimeout(()=>{
-  //           this.setState({kuning:2})
-  //         })
-  //       }
-  //     }
-      
-  //     if(this.state.merah===0 && this.state.hijau===0){
-  //       this.setState({ kuning: this.state.kuning -1 })
-
-  //       if(this.state.kuning===0 && this.state.merah===0){
-  //         clearInterval(this.interval)
-  //         setTimeout(()=>{
-  //           this.setState({hijau:20})
-  //         })
-  //       }
-  
-  //       if(this.state.kuning===0 && this.state.hijau===0){
-  //         clearInterval(this.interval)
-  //         setTimeout(()=>{
-  //           this.setState({merah:20})
-  //         })
-  //       }
-  //     }
-  //   },1000)
-  // }
-  componentWillUnmount () {
-    clearInterval(this.interval)
-  }
-  componentDidUpdate(){
-    this.interval = setInterval(() => {
-      // console.log(this.state.hijau)
-      
-      if(this.state.kuning===0 && this.state.hijau===0 && this.state.merah!==0){
-        this.setState({ merah: this.state.merah -1 })
-  
-        if(this.state.hijau===0 && this.state.merah===0 && this.state.kuning===0){
-          clearInterval(this.interval)
-          setTimeout(()=>{
-            this.setState({kuning:2})
-          })
-          if(this.state.merah===0 && this.state.hijau===0 && this.state.kuning!==0){
-            this.setState({ kuning: this.state.kuning -1 })
-    
-            if(this.state.kuning===0 && this.state.merah===0 ){
-              clearInterval(this.interval)
-              setTimeout(()=>{
-                this.setState({hijau:20})
-              })
-            }
-      
-            if(this.state.kuning===0 && this.state.hijau===0){
-              clearInterval(this.interval)
-              setTimeout(()=>{
-                this.setState({merah:20})
-              })
-              
-            }
-          }
-        }
-      }
-
-      if(this.state.merah===0 && this.state.hijau!==0 && this.state.kuning===0){
-        this.setState({ hijau: this.state.hijau -1 })
-
-        if(this.state.kuning===0 && this.state.merah===0 && this.state.hijau===0){
-          clearInterval(this.interval)
-          setTimeout(()=>{
-            this.setState({kuning:2})
-          })
-          if(this.state.merah===0 && this.state.hijau===0 && this.state.kuning!==0){
-            this.setState({ kuning: this.state.kuning -1 })
-    
-            if(this.state.kuning===0 && this.state.merah===0 ){
-              clearInterval(this.interval)
-              setTimeout(()=>{
-                this.setState({hijau:20})
-              })
-            }
-      
-            if(this.state.kuning===0 && this.state.hijau===0){
-              clearInterval(this.interval)
-              setTimeout(()=>{
-                this.setState({merah:20})
-              })
-            }
-          }
-        }
-      }
-      
-      if(this.state.merah===0 && this.state.hijau===0 && this.state.kuning!==0){
-        this.setState({ kuning: this.state.kuning -1 })
-
-        if(this.state.kuning===0 && this.state.merah===0 ){
-          clearInterval(this.interval)
-          setTimeout(()=>{
-            this.setState({hijau:20})
-          })
-          if(this.state.merah===0 && this.state.hijau!==0 && this.state.kuning===0){
-            this.setState({ hijau: this.state.hijau -1 })
-    
-            if(this.state.kuning===0 && this.state.merah===0 && this.state.hijau===0){
-              clearInterval(this.interval)
-              setTimeout(()=>{
-                this.setState({kuning:2})
-              })
-              if(this.state.merah===0 && this.state.hijau===0 && this.state.kuning!==0){
-                this.setState({ kuning: this.state.kuning -1 })
-        
-                if(this.state.kuning===0 && this.state.merah===0 ){
-                  clearInterval(this.interval)
-                  setTimeout(()=>{
-                    this.setState({hijau:20})
-                  })
-                }
-          
-                if(this.state.kuning===0 && this.state.hijau===0){
-                  clearInterval(this.interval)
-                  setTimeout(()=>{
-                    this.setState({merah:20})
-                  })
-                }
-              }
-            }
-          }
-        }
-  
-        if(this.state.kuning===0 && this.state.hijau===0){
-          clearInterval(this.interval)
-          setTimeout(()=>{
-            this.setState({merah:20})
-          })
-          if(this.state.kuning===0 && this.state.hijau===0 && this.state.merah!==0){
-            this.setState({ merah: this.state.merah -1 })
-      
-            if(this.state.hijau===0 && this.state.merah===0 && this.state.kuning===0){
-              clearInterval(this.interval)
-              setTimeout(()=>{
-                this.setState({kuning:2})
-              })
-              if(this.state.merah===0 && this.state.hijau===0 && this.state.kuning!==0){
-                this.setState({ kuning: this.state.kuning -1 })
-        
-                if(this.state.kuning===0 && this.state.merah===0 ){
-                  clearInterval(this.interval)
-                  setTimeout(()=>{
-                    this.setState({hijau:20})
-                  })
-                }
-          
-                if(this.state.kuning===0 && this.state.hijau===0){
-                  clearInterval(this.interval)
-                  setTimeout(()=>{
-                    this.setState({merah:20})
-                  })
-                }
-              }
-            }
-          }
-        }
-      }
-      
-    },1000)
-  
-  }
   componentDidMount () {
     const id = this.props.match.params.id - 1
     const vid = this.state.data[id].link
     this.setState({ vid })
     console.log(vid)
     
-    setTimeout(() => {
-      console.log('kuning')
-    },2000)
+    this.red = setInterval(() => {
+      
+      if(this.state.kuning===0 && this.state.hijau===0 && this.state.merah!==0){
+        this.setState({ merah: this.state.merah -1 })
+  
+        if(this.state.hijau===0 && this.state.merah===0 && this.state.kuning===0){
+          clearInterval(this.red)
+          setTimeout(()=>{
+            this.setState({kuning:2})
+          })
+          this.yellow = setInterval(() => {
+            // console.log(this.state.hijau)
+            
+            if(this.state.merah===0 && this.state.hijau===0 && this.state.kuning!==0){
+              this.setState({ kuning: this.state.kuning -1 })
+      
+              if(this.state.kuning===0){
+                clearInterval(this.yellow)
+                setTimeout(()=>{
+                  this.setState({hijau:20})
+                })
+                this.green = setInterval(() => {
+                  // console.log(this.state.hijau)
+                
+                  if(this.state.merah===0 && this.state.hijau!==0 && this.state.kuning===0){
+                    this.setState({ hijau: this.state.hijau -1 })
+            
+                    if(this.state.hijau===0 && this.state.merah===0 && this.state.kuning===0){
+                      clearInterval(this.green)
+                      setTimeout(()=>{
+                        this.setState({kuning:2})
+                      })
+                      this.yellow = setInterval(() => {
+                        // console.log(this.state.hijau)
+                        
+                        if(this.state.merah===0 && this.state.hijau===0 && this.state.kuning!==0){
+                          this.setState({ kuning: this.state.kuning -1 })
+                  
+                          if(this.state.kuning===0){
+                            clearInterval(this.yellow)
+                            setTimeout(()=>{
+                              this.setState({merah:20})
+                            })
+                          }
+                        }
+                      },1000)
+                    }
+                  }
+                },1000)
+              }
+            }
+          },1000)
+        }
+      }
+    },1000)
+     
   }
   render () {
     return (
@@ -282,21 +143,25 @@ export default class Camera extends Component {
             <Card className='w-100 p-5 bg-light'>
               <Grid container className='px-auto'>
                 <Lampu
+                  nomor='1'
+                  merah={this.state.hijau}
+                  kuning={this.state.kuning}
+                  hijau={this.state.merah}
+                />
+                <Lampu
+                  nomor='2'
                   merah={this.state.merah}
                   kuning={this.state.kuning}
                   hijau={this.state.hijau}
                 />
                 <Lampu
-                  merah={this.state.merah}
+                  nomor='3'
+                  merah={this.state.hijau}
                   kuning={this.state.kuning}
-                  hijau={this.state.hijau}
+                  hijau={this.state.merah}
                 />
                 <Lampu
-                  merah={this.state.merah}
-                  kuning={this.state.kuning}
-                  hijau={this.state.hijau}
-                />
-                <Lampu
+                  nomor='4'
                   merah={this.state.merah}
                   kuning={this.state.kuning}
                   hijau={this.state.hijau}

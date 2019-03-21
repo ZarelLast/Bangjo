@@ -6,7 +6,7 @@ export default class Lampu extends Component {
   render () {
     return (
       <Grid item md={3} className='text-center'>
-        <h4 className='text-left'>Lampu 1</h4>
+        <h4 className='text-left'>Lampu {this.props.nomor}</h4>
         <Grid container>
           <Grid item md={4}>
             <Paper style={{ background: grey[900] }}>
