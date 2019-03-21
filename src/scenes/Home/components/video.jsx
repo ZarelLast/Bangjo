@@ -7,6 +7,7 @@ export default class ideo extends Component {
         className='h-100 w-100'
         src={this.props.video}
         frameborder='0'
+        autoplay='true'
         allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
         allowfullscreen
       />

@@ -2,23 +2,27 @@ import React, { Component } from 'react'
 import { Grid, Card, Typography, Button } from '@material-ui/core'
 import Lampu from './components/lampu'
 import './CCTV.css'
-import Video from '../Home/components/video'
 import { Link } from 'react-router-dom'
+import Video from '../Home/components/video'
+import video1 from '../../video/video1.mp4'
+import video2 from '../../video/video2.mp4'
+import video3 from '../../video/video3.mp4'
+
 
 export default class Camera extends Component {
   state = {
     data: [
       {
         id: 1,
-        link: 'https://www.youtube.com/embed/AiSXyvtAy7I?&autoplay=1&mute=0'
+        link: video1
       },
       {
         id: 2,
-        link: 'https://www.youtube.com/embed/oXaATFucpz4?&autoplay=1&mute=0'
+        link: video2
       },
       {
         id: 3,
-        link: 'https://www.youtube.com/embed/J85lXdTaKgA?&autoplay=1&mute=0'
+        link: video3
       },
       {
         id: 4,
