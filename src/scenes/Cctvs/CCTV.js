@@ -127,7 +127,7 @@ export default class Camera extends Component {
       <div className='bg-size'>
         <div className='container my-5'>
           <Grid container className='mb-5'>
-            <Grid item md={6} className='mt-auto'>
+            <Grid item xs={12} md={6} className='mt-auto'>
               <Card className='py-2 px-4'>
                 <Typography variant='subtitle1' component='p'>
                   Alamat : jl.Pemuda no 15 Semarang
@@ -137,7 +137,7 @@ export default class Camera extends Component {
                 </Typography>
               </Card>
             </Grid>
-            <Grid item md={5} className='ml-auto'>
+            <Grid item xs={12} md={5} className='ml-auto'>
               <Card style={{ height: '260px' }}>
                 <Video video={this.state.vid} />
               </Card>
@@ -174,7 +174,7 @@ export default class Camera extends Component {
             </Card>
           </Grid>
           <Link to={'/Dashboard/'}>
-            <Button variant='contained' className='ml-5'>
+            <Button variant='contained' className='my-5'>
               Back
             </Button>
           </Link>
