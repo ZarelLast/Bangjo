@@ -126,11 +126,19 @@ export default class Camera extends Component {
           if(this.state.merah===0 && this.state.hijau===0 && this.state.kuning!==0){
             this.setState({ kuning: this.state.kuning -1 })
     
-            if(this.state.kuning===0 && this.state.merah===0 && this.state.hijau===0 ){
+            if(this.state.kuning===0 && this.state.merah===0 ){
               clearInterval(this.interval)
               setTimeout(()=>{
                 this.setState({hijau:20})
               })
+            }
+      
+            if(this.state.kuning===0 && this.state.hijau===0){
+              clearInterval(this.interval)
+              setTimeout(()=>{
+                this.setState({merah:20})
+              })
+              
             }
           }
         }
