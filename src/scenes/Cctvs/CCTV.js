@@ -333,6 +333,24 @@ export default class Camera extends Component {
                   hijau={this.state.merah}
                   whijau={this.state.whijau2}
                 />
+                <Lampu
+                  nomor='3'
+                  merah={this.state.merah}
+                  wmerah={this.state.wmerah}
+                  kuning={this.state.kuning}
+                  wkuning={this.state.wkuning}
+                  hijau={this.state.hijau}
+                  whijau={this.state.whijau}
+                />
+                <Lampu
+                  nomor='4'
+                  merah={this.state.hijau}
+                  wmerah={this.state.wmerah2}
+                  kuning={this.state.kuning}
+                  wkuning={this.state.wkuning}
+                  hijau={this.state.merah}
+                  whijau={this.state.whijau2}
+                />
               </Grid>
               <Grid item xs={12} md={12} className='mt-5'>
                 <div class='form-group'>
