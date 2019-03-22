@@ -10,9 +10,9 @@ export default class Lampu extends Component {
         <Grid container>
           <Grid item xs={12} md={4}>
             <Paper style={{ background: grey[900] }}>
-              <Fab className='m-1' style={{ background: red[900] }} />
-              <Fab className='m-1' style={{ background: yellow[700] }} />
-              <Fab className='m-1' style={{ background: green[700] }} />
+              <Fab className='m-1' style={{ background: `${this.props.wmerah}` }} />
+              <Fab className='m-1' style={{ background: `${this.props.wkuning}` }} />
+              <Fab className='m-1' style={{ background: `${this.props.whijau}` }} />
             </Paper>
           </Grid>
           <Grid item xs={12} md={6}>
