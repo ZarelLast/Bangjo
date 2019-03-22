@@ -68,6 +68,12 @@ export default class Camera extends Component {
     this.setState({
       merah: this.state.second,
       hijau2: this.state.second,
+      wkuning: '',
+      whijau: '',
+      wmerah2: '',
+      merah2: 0,
+      kuning: 0,
+      hijau: 0,
       wmerah: 'red',
       whijau2: 'green'
     })
