@@ -44,31 +44,20 @@ export default class Camera extends Component {
         link: 'https://www.youtube.com/embed/cMHJIsmObkA?&autoplay=1&mute=0'
       }
     ],
-    second: 20,
-    lampu: [
-      {
-        wmerah: 'red',
-        wkuning: '',
-        whijau: '',
-        merah: 20,
-        kuning: 0,
-        hijau: 0
-      },
-      {
-        wmerah: 'green',
-        wkuning: '',
-        whijau: '',
-        merah: 0,
-        kuning: 0,
-        hijau: 20
-      }
-    ],
-
-    number: 2,
+    second: 20,  
+    second2: 2,  
+    wmerah: 'red',
+    wkuning: '',
+    whijau: '',
+    wmerah2: '',
+    whijau2: 'green',
+    merah: 20,
+    kuning: 0,
+    hijau: 0,
     vid: null
   }
 
-  rambu1 () {
+  lampu1 () {
     this.red = setInterval(() => {
       if (
         this.state.kuning === 0 &&
@@ -85,7 +74,7 @@ export default class Camera extends Component {
         ) {
           clearInterval(this.red)
           setTimeout(() => {
-            this.setState({ kuning: 2, wkuning: 'yellow', wmerah: '' })
+            this.setState({ kuning: this.state.second2, wkuning: 'yellow', wmerah: '' , whijau2: '' })
           })
           this.yellow = setInterval(() => {
             if (
@@ -100,7 +89,8 @@ export default class Camera extends Component {
                   this.setState({
                     hijau: this.state.second,
                     wkuning: '',
-                    whijau: 'green'
+                    whijau: 'green',
+                    wmerah2: 'red'
                   })
                 })
                 this.green = setInterval(() => {
@@ -118,9 +108,10 @@ export default class Camera extends Component {
                       clearInterval(this.green)
                       setTimeout(() => {
                         this.setState({
-                          kuning: 2,
+                          kuning: this.state.second2,
                           wkuning: 'yellow',
-                          whijau: ''
+                          whijau: '',
+                          wmerah2:''
                         })
                       })
                       this.yellow = setInterval(() => {
@@ -136,7 +127,8 @@ export default class Camera extends Component {
                               this.setState({
                                 merah: this.state.second,
                                 wmerah: 'red',
-                                wkuning: ''
+                                wkuning: '',
+                                whijau2:'green'
                               })
                             })
                             this.red = setInterval(() => {
@@ -156,9 +148,10 @@ export default class Camera extends Component {
                                   clearInterval(this.red)
                                   setTimeout(() => {
                                     this.setState({
-                                      kuning: 2,
+                                      kuning: this.state.second2,
                                       wkuning: 'yellow',
-                                      wmerah: ''
+                                      wmerah: '',
+                                      whijau2:''
                                     })
                                   })
                                   this.yellow = setInterval(() => {
@@ -176,7 +169,8 @@ export default class Camera extends Component {
                                           this.setState({
                                             hijau: this.state.second,
                                             wkuning: '',
-                                            whijau: 'green'
+                                            whijau: 'green',
+                                            wmerah2:'red'
                                           })
                                         })
                                         this.green = setInterval(() => {
@@ -196,9 +190,10 @@ export default class Camera extends Component {
                                               clearInterval(this.green)
                                               setTimeout(() => {
                                                 this.setState({
-                                                  kuning: 2,
+                                                  kuning: this.state.second2,
                                                   wkuning: 'yellow',
-                                                  whijau: ''
+                                                  whijau: '',
+                                                  wmerah2:''
                                                 })
                                               })
                                               this.yellow = setInterval(() => {
@@ -218,6 +213,7 @@ export default class Camera extends Component {
                                                         merah: this.state
                                                           .second,
                                                         wmerah: 'red',
+                                                        whijau2:'green',
                                                         wkuning: ''
                                                       })
                                                     })
@@ -246,17 +242,14 @@ export default class Camera extends Component {
       }
     }, 1000)
   }
-
+  
   componentDidMount () {
     const id = this.props.match.params.id - 1
     const vid = this.state.data[id].link
     this.setState({ vid })
     var i = 0
     console.log(vid)
-    this.jalan()
-  }
-  componentWillUnmount () {
-    this.jalan()
+    this.lampu1()
   }
 
   render () {
@@ -293,6 +286,15 @@ export default class Camera extends Component {
                   whijau={this.state.whijau}
                 />
                 <Lampu
+                  nomor='2'
+                  merah={this.state.hijau}
+                  wmerah={this.state.wmerah2}
+                  kuning={this.state.kuning}
+                  wkuning={this.state.wkuning}
+                  hijau={this.state.merah}
+                  whijau={this.state.whijau2}
+                />
+                <Lampu
                   nomor='3'
                   merah={this.state.merah}
                   wmerah={this.state.wmerah}
@@ -300,6 +302,15 @@ export default class Camera extends Component {
                   wkuning={this.state.wkuning}
                   hijau={this.state.hijau}
                   whijau={this.state.whijau}
+                />
+                <Lampu
+                  nomor='4'
+                  merah={this.state.hijau}
+                  wmerah={this.state.wmerah2}
+                  kuning={this.state.kuning}
+                  wkuning={this.state.wkuning}
+                  hijau={this.state.merah}
+                  whijau={this.state.whijau2}
                 />
               </Grid>
             </Card>
