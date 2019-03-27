@@ -20,10 +20,10 @@ class Routing extends Component {
   render(){
     return(
       <Router className='bg-dark'>
-        <Route path='/' component={Login} />
+        {/* <Route path='/' component={Login} /> */}
         {/* <Route path='/Login' exact component={Login} /> */}
-        <Route path='/Dashboard' component={Home} />
-        <Route path='/camera/:id' component={Camera} />
+        <Route path='/' exact component={Home} />
+        <Route path='/camera/:id' exact component={Camera} />
       </Router>
     )
   }

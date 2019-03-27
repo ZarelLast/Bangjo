@@ -48,6 +48,9 @@ export default class Home extends Component {
     return (
       <div className='bg-color'>
         <div className='container my-5'>
+          <div class='form-group'>
+            <input class='form-control' placeholder='Search...' />
+          </div>
           <h4 class='text-center my-5'>Traffic Light</h4>
           <Grid container spacing={24}>
             {this.state.data.map(res=>
