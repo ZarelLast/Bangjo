@@ -6,6 +6,7 @@ import 'typeface-roboto'
 import Home from './scenes/Home/Home'
 import Login from './scenes/Login/Login'
 import Camera from './scenes/Cctvs/CCTV'
+import Newcard from './scenes/New-cctv/index'
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class Routing extends Component {
         {/* <Route path='/' component={Login} /> */}
         {/* <Route path='/Login' exact component={Login} /> */}
         <Route path='/' exact component={Home} />
+        <Route path='/new-cctv/' exact component={Newcard} />
         <Route path='/camera/:id' exact component={Camera} />
       </Router>
     )

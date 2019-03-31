@@ -5,6 +5,7 @@ import { Grid } from '@material-ui/core'
 import video1 from '../../video/video1.mp4'
 import video2 from '../../video/video2.mp4'
 import video3 from '../../video/video3.mp4'
+import Newcard from './components/newcard'
 
 export default class Home extends Component {
   state = {
@@ -59,6 +60,7 @@ export default class Home extends Component {
               video={res.link}
             />
             )}
+            <Newcard />
           </Grid>
         </div>
       </div>
